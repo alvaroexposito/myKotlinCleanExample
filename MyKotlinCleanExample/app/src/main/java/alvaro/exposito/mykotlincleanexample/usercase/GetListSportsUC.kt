@@ -1,25 +1,14 @@
-package alvaro.exposito.mykotlincleanexample.view
+package alvaro.exposito.mykotlincleanexample.usercase
 
-import alvaro.exposito.mykotlincleanexample.R
-import alvaro.exposito.mykotlincleanexample.SPORT_BUNDLE_EXTRA
 import alvaro.exposito.mykotlincleanexample.model.Sport
-import alvaro.exposito.mykotlincleanexample.view.components.SportAdapter
-import android.content.Intent
-import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.GridLayoutManager
 
-import kotlinx.android.synthetic.main.activity_main.*
+/**
+ * Created by alvaroexpositoguerra on 14/5/17.
+ */
 
-class MainActivity : AppCompatActivity() {
+class GetListSportsUC {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        createAdapter()
-    }
-
-    fun createAdapter() {
+    fun execute(listener: (List<Sport>) -> (Unit)) {
 
         var items = ArrayList<Sport>()
         items.add(Sport("http://lorempixel.com/400/200/sports/1/", 1))
@@ -47,12 +36,6 @@ class MainActivity : AppCompatActivity() {
         items.add(Sport("http://lorempixel.com/400/200/sports/8/", 23))
         items.add(Sport("http://lorempixel.com/400/200/sports/9/", 24))
 
-        this.recycler.layoutManager = GridLayoutManager(this, 2)
-        this.recycler.adapter = SportAdapter(items) {
-            val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra(SPORT_BUNDLE_EXTRA,items)
-            startActivity(intent)
-        }
-        this.recycler.adapter.notifyDataSetChanged()
+        listener(items)
     }
 }

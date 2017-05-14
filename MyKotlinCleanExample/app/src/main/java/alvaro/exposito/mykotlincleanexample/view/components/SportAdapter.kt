@@ -13,15 +13,14 @@ import com.squareup.picasso.Picasso
  * Created by alvaroexpositoguerra on 13/5/17.
  */
 
+class SportAdapter(val items: List<Sport>, val listener: (Sport) -> Unit) : RecyclerView.Adapter<SportAdapter.SportViewHolder>() {
 
-class SportAdapter(val items: List<Sport>) : RecyclerView.Adapter<SportAdapter.SportViewHolder>() {
-
-    override fun getItemCount(): Int{
+    override fun getItemCount(): Int {
         return items.size
     }
 
     override fun onBindViewHolder(holder: SportViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(items[position], listener)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SportViewHolder {
@@ -30,10 +29,11 @@ class SportAdapter(val items: List<Sport>) : RecyclerView.Adapter<SportAdapter.S
 
     class SportViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(sport: Sport) {
+        fun bind(sport: Sport, listener: (Sport) -> Unit) {
 
             var imageSport = itemView.findViewById(R.id.image_sport) as ImageView
             Picasso.with(itemView.context).load(sport.imageUrl).into(imageSport)
+            itemView.setOnClickListener{ listener(sport) }
         }
     }
 }
