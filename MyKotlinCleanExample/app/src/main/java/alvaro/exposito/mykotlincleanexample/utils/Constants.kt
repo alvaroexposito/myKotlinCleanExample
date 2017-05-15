@@ -1,4 +1,4 @@
-package alvaro.exposito.mykotlincleanexample
+package alvaro.exposito.mykotlincleanexample.utils
 
 /**
  * Created by alvaroexpositoguerra on 14/5/17.

@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso
  * Created by alvaroexpositoguerra on 13/5/17.
  */
 
-class SportAdapter(val items: List<Sport>, val listener: (Sport) -> Unit) : RecyclerView.Adapter<SportAdapter.SportViewHolder>() {
+class SportAdapter(val items: ArrayList<Sport>, val listener: (Sport) -> Unit) : RecyclerView.Adapter<SportAdapter.SportViewHolder>() {
 
     override fun getItemCount(): Int {
         return items.size
