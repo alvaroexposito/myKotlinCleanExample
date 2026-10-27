@@ -1,9 +1,9 @@
 # Plan 001: Modernize stack
 
-Status: Draft
+Status: Approved
 Spec: [spec.md](spec.md) (must be Approved)
 
-> Spec 001 is approved (decisions D-1 to D-3). This plan needs approval before tasks can start.
+> Spec 001 is approved (decisions D-1 to D-3).
 
 ## Approach
 
@@ -81,4 +81,4 @@ Exact versions are pinned in `gradle/libs.versions.toml` at implementation time 
 
 ## Approval
 
-- [ ] Approved by: ____ on ____
+- [x] Approved by: Alvaro Exposito Guerra on 2026-10-27

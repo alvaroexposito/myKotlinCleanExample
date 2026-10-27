@@ -1,6 +1,6 @@
 # Tasks 001: Modernize stack
 
-Status: Draft
+Status: Approved
 Plan: [plan.md](plan.md) (must be Approved)
 
 Legend: `[P]` = parallelizable · tests come before implementation.
@@ -56,4 +56,4 @@ Legend: `[P]` = parallelizable · tests come before implementation.
 
 ## Approval
 
-- [ ] Approved by: ____ on ____
+- [x] Approved by: Alvaro Exposito Guerra on 2026-10-27
