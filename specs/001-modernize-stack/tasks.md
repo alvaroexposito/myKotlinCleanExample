@@ -18,10 +18,10 @@ Legend: `[P]` = parallelizable · tests come before implementation.
 
 ## Phase 2: Domain (test-first)
 
-- [ ] T010 Create `domain/model/Sport`, `domain/repository/SportRepository`
-- [ ] T011 [P] Test `GetSportsUseCaseTest` (AC-1 data)
-- [ ] T012 [P] Test `GetSportDetailUseCaseTest` (AC-6, AC-7)
-- [ ] T013 Implement `GetSportsUseCase`, `GetSportDetailUseCase`
+- [x] T010 Create `domain/model/Sport`, `domain/repository/SportRepository`
+- [x] T011 [P] Test `GetSportsUseCaseTest` (AC-1 data)
+- [x] T012 [P] Test `GetSportDetailUseCaseTest` (AC-6, AC-7)
+- [x] T013 Implement `GetSportsUseCase`, `GetSportDetailUseCase`
 
 ## Phase 3: Data (test-first)
 
