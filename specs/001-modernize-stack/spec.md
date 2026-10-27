@@ -1,6 +1,6 @@
 # Spec 001: Modernize stack
 
-Status: Approved
+Status: Implemented
 Created: 2026-10-27
 Branch: `spec/001-modernize-stack`
 Related: [000-baseline](../000-baseline/spec.md), [constitution](../../docs/constitution.md)

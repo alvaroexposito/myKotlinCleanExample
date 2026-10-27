@@ -17,11 +17,18 @@ class SportDetailScreenTest {
     @Test
     fun ac6_showsImageAboveName() {
         composeRule.setContent {
-            SportsTheme { SportDetailScreen(SportDetailUiState.Found(Sport(9, "Athletics", android.R.drawable.ic_menu_gallery))) }
+            SportsTheme {
+                SportDetailScreen(
+                    SportDetailUiState.Found(Sport(9, "Athletics", android.R.drawable.ic_menu_gallery)),
+                )
+            }
         }
 
         composeRule.onNodeWithText("Athletics").assertIsDisplayed()
-        val image = composeRule.onNodeWithContentDescription("Athletics").assertIsDisplayed().fetchSemanticsNode().boundsInRoot
+        val image =
+            composeRule.onNodeWithContentDescription(
+                "Athletics",
+            ).assertIsDisplayed().fetchSemanticsNode().boundsInRoot
         val name = composeRule.onNodeWithText("Athletics").fetchSemanticsNode().boundsInRoot
         assertTrue(image.bottom <= name.top)
     }

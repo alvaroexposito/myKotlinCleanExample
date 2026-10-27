@@ -1,6 +1,6 @@
 # Plan 001: Modernize stack
 
-Status: Approved
+Status: Implemented
 Spec: [spec.md](spec.md) (must be Approved)
 
 > Spec 001 is approved (decisions D-1 to D-3).

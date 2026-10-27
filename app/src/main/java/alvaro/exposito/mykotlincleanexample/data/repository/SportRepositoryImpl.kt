@@ -12,5 +12,8 @@ class SportRepositoryImpl
     ) : SportRepository {
         override suspend fun getSports(): Result<List<Sport>> = runCatching { dataSource.getSports() }
 
-        override suspend fun getSport(id: Int): Result<Sport?> = runCatching { dataSource.getSports().firstOrNull { it.id == id } }
+        override suspend fun getSport(id: Int): Result<Sport?> =
+            runCatching {
+                dataSource.getSports().firstOrNull { it.id == id }
+            }
     }

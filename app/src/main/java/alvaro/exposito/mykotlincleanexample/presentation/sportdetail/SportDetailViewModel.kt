@@ -27,7 +27,10 @@ class SportDetailViewModel
             viewModelScope.launch {
                 _uiState.value =
                     getSportDetail(id).fold(
-                        onSuccess = { sport -> sport?.let { SportDetailUiState.Found(it) } ?: SportDetailUiState.NotFound },
+                        onSuccess = {
+                                sport ->
+                            sport?.let { SportDetailUiState.Found(it) } ?: SportDetailUiState.NotFound
+                        },
                         onFailure = { SportDetailUiState.Error(it.message) },
                     )
             }

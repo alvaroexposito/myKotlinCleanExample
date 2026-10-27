@@ -1,6 +1,6 @@
 # Tasks 001: Modernize stack
 
-Status: Approved
+Status: Implemented
 Plan: [plan.md](plan.md) (must be Approved)
 
 Legend: `[P]` = parallelizable · tests come before implementation.
@@ -45,14 +45,14 @@ Legend: `[P]` = parallelizable · tests come before implementation.
 
 - [x] T040 Delete legacy `usercase/`, `view/`, `model/`, `utils/`, XML layouts, Java template tests (AC-12) (done during Phase 1: legacy sources can't compile with the new build, so T008 required removing them)
 - [x] T041 Remove the `INTERNET` permission from the manifest (done during Phase 1, when the manifest was rewritten)
-- [ ] T042 Add the Konsist layer test: `domain` has no `android.*` imports (AC-10)
+- [x] T042 Add the Konsist layer test: `domain` has no `android.*` imports (AC-10)
 
 ## Phase 6: Verification
 
-- [ ] T090 Every AC-1…AC-12 has a passing test or checked review item
-- [ ] T091 `./gradlew assembleDebug testDebugUnitTest lint ktlintCheck detekt` is green from the repo root (AC-9)
-- [ ] T092 Run on a device or emulator in airplane mode: list, detail, back
-- [ ] T093 Update `AGENTS.md` (repo layout, current state) and set spec/plan/tasks status to `Implemented`
+- [x] T090 Every AC-1…AC-12 has a passing test or checked review item
+- [x] T091 `./gradlew assembleDebug testDebugUnitTest lint ktlintCheck detekt` is green from the repo root (AC-9)
+- [x] T092 Run on a device or emulator in airplane mode: list, detail, back (Pixel 8 emulator, Android 17)
+- [x] T093 Update `AGENTS.md` (repo layout, current state) and set spec/plan/tasks status to `Implemented`
 
 ## Approval
 

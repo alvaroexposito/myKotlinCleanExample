@@ -1,6 +1,6 @@
 # Architecture (target)
 
-Status: Target. This takes effect once spec 001 is implemented. For current legacy behavior, see `specs/000-baseline/spec.md`.
+Status: Current (implemented by spec 001). For the legacy app this replaced, see `specs/000-baseline/spec.md`.
 
 ## Layers
 
@@ -45,7 +45,7 @@ alvaro.exposito.mykotlincleanexample
 
 ## Conventions
 
-- `UiState` is a sealed interface: `Loading`, `Success(...)`, `Error(message)`.
+- `UiState` is a sealed interface: `Loading`, `Success(...)`, `Error(message)`. A screen may split `Success` into more specific states, as the detail screen does with `Found` and `NotFound`.
 - ViewModels expose `val uiState: StateFlow<XUiState>` and never hold a `Context`.
 - Repositories return `Result<T>` or `Flow<T>`; they never throw across layer boundaries.
 - Navigation arguments are ids only. Screens load their own data through their ViewModel.

@@ -31,12 +31,6 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
-object SportListTestTags {
-    const val GRID = "sport_grid"
-    const val TILE = "sport_tile"
-    const val LOADING = "sport_list_loading"
-}
-
 @Composable
 fun SportListRoute(
     onSportClick: (Int) -> Unit,
