@@ -32,14 +32,14 @@ Legend: `[P]` = parallelizable · tests come before implementation.
 
 ## Phase 4: Presentation (test-first)
 
-- [ ] T030 [P] Test `SportListViewModelTest` (AC-1, AC-2, AC-3)
-- [ ] T031 [P] Test `SportDetailViewModelTest` (AC-6, AC-7)
-- [ ] T032 Implement `SportListViewModel`, `SportDetailViewModel` + `UiState`s
-- [ ] T033 [P] Test `SportListScreenTest` (AC-1, AC-2, AC-3)
-- [ ] T034 [P] Test `SportDetailScreenTest` (AC-6, AC-7)
-- [ ] T035 Implement Material 3 theme, `SportListScreen`, `SportDetailScreen`
-- [ ] T036 Test `AppNavigationTest` (AC-5, AC-8)
-- [ ] T037 Implement `AppNavHost` + routes; wire into `MainActivity`
+- [x] T030 [P] Test `SportListViewModelTest` (AC-1, AC-2, AC-3)
+- [x] T031 [P] Test `SportDetailViewModelTest` (AC-6, AC-7)
+- [x] T032 Implement `SportListViewModel`, `SportDetailViewModel` + `UiState`s
+- [x] T033 [P] Test `SportListScreenTest` (AC-1, AC-2, AC-3)
+- [x] T034 [P] Test `SportDetailScreenTest` (AC-6, AC-7)
+- [x] T035 Implement Material 3 theme, `SportListScreen`, `SportDetailScreen`
+- [x] T036 Test `AppNavigationTest` (AC-5, AC-8)
+- [x] T037 Implement `AppNavHost` + routes; wire into `MainActivity`
 
 ## Phase 5: Cleanup
 

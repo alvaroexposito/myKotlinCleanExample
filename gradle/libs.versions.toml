@@ -17,7 +17,8 @@ junit4 = "4.13.2"
 mockk = "1.13.13"
 turbine = "1.2.0"
 konsist = "0.17.3"
-androidxTestRunner = "1.6.2"
+androidxTestRunner = "1.7.0"
+espresso = "3.7.0"
 ktlintGradle = "12.1.2"
 detekt = "1.23.7"
 
@@ -49,6 +50,7 @@ mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 konsist = { module = "com.lemonappdev:konsist", version.ref = "konsist" }
 androidx-test-runner = { module = "androidx.test:runner", version.ref = "androidxTestRunner" }
+androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
