@@ -1,9 +1,9 @@
 # Plan 001: Modernize stack
 
-Status: Draft
+Status: Implemented
 Spec: [spec.md](spec.md) (must be Approved)
 
-> Spec 001 is approved (decisions D-1 to D-3). This plan needs approval before tasks can start.
+> Spec 001 is approved (decisions D-1 to D-3).
 
 ## Approach
 
@@ -71,7 +71,7 @@ Tap a tile → `navController.navigate(SportDetail(id))` → `SportDetailViewMod
 | ktlint (Gradle plugin), detekt | Style (Article VI) |
 | Konsist (test) | Enforce layer rule for AC-10 |
 
-Exact versions are pinned in `gradle/libs.versions.toml` at implementation time (latest stable).
+Exact versions are pinned in `gradle/libs.versions.toml`, chosen as a mutually compatible stable set (AGP 8.7.3, Kotlin 2.1.0, Gradle 8.11.1). Upgrading them is a `chore:` change.
 
 ## Risks & mitigations
 
@@ -81,4 +81,4 @@ Exact versions are pinned in `gradle/libs.versions.toml` at implementation time 
 
 ## Approval
 
-- [ ] Approved by: ____ on ____
+- [x] Approved by: Alvaro Exposito Guerra on 2026-10-27

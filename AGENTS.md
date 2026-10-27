@@ -12,7 +12,7 @@ The project uses **Spec-Driven Development (SDD)**: specs are the source of trut
 
 1. [`docs/constitution.md`](docs/constitution.md): the non-negotiable rules for architecture, stack, testing and style.
 2. [`docs/sdd-workflow.md`](docs/sdd-workflow.md): how a change goes from idea to merged code.
-3. [`docs/architecture.md`](docs/architecture.md): target layering and package layout.
+3. [`docs/architecture.md`](docs/architecture.md): layering and package layout.
 4. [`specs/`](specs/): one folder per feature. Each folder holds `spec.md`, `plan.md` and `tasks.md`.
 
 If the constitution and any other document disagree, **the constitution wins**.
@@ -34,29 +34,24 @@ CLAUDE.md                 ← Claude Code entry point (imports this file)
 docs/
   constitution.md         ← project rules
   sdd-workflow.md         ← process
-  architecture.md         ← target architecture
+  architecture.md         ← architecture and package layout
 specs/
   _templates/             ← spec / plan / tasks templates
   000-baseline/           ← current behavior of the legacy app (reference)
   001-modernize-stack/    ← first SDD feature: migrate to the modern stack
-MyKotlinCleanExample/     ← legacy Gradle project (moved to repo root by spec 001)
+app/                      ← Android app module (domain / data / presentation)
+gradle/libs.versions.toml ← dependency versions
+config/detekt/            ← detekt rules
 .claude/commands/         ← /spec, /plan, /tasks, /implement slash commands
 ```
 
-## Current state vs target
+## Current state
 
-| | Current (legacy, 2017) | Target (see constitution) |
-|---|---|---|
-| Language / build | Kotlin 1.1, AGP 2.3, Gradle 3.3, Groovy DSL | Kotlin 2.x, AGP 8.x, Gradle Kotlin DSL + version catalog |
-| UI | Activities, XML, `kotlin-android-extensions` | Single Activity, Jetpack Compose, Navigation Compose |
-| Architecture | Activities call "use cases" directly | Clean Architecture (domain / data / presentation) + MVVM |
-| Async / DI | Callbacks / none | Coroutines + Flow / Hilt |
-| Images | Picasso + lorempixel.com (offline) | Bundled local drawables |
-| Tests | Template examples only | JUnit5, MockK, Turbine, Compose UI tests |
+Spec 001 is implemented. The app runs on the stack in constitution Article III: Kotlin 2.1, AGP 8.7, Gradle 8.11, Compose + Material 3, Hilt, Coroutines/Flow and Navigation Compose. All data is local, and the images are bundled placeholder icons.
 
-**The legacy project does not build with modern tooling.** Until spec 001 lands, don't try to fix the legacy build piecemeal. Follow spec 001's tasks.
+Build with **JDK 17 or 21** (for example `export JAVA_HOME=$(/usr/libexec/java_home -v 21)`). UI tests need a device or emulator; Espresso 3.7+ is required for Android 16+ images.
 
-## Commands (valid once spec 001 is implemented)
+## Commands
 
 ```bash
 ./gradlew assembleDebug          # build
