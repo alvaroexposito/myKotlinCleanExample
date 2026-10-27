@@ -12,7 +12,7 @@ The project uses **Spec-Driven Development (SDD)**: specs are the source of trut
 
 1. [`docs/constitution.md`](docs/constitution.md): the non-negotiable rules for architecture, stack, testing and style.
 2. [`docs/sdd-workflow.md`](docs/sdd-workflow.md): how a change goes from idea to merged code.
-3. [`docs/architecture.md`](docs/architecture.md): target layering and package layout.
+3. [`docs/architecture.md`](docs/architecture.md): layering and package layout.
 4. [`specs/`](specs/): one folder per feature. Each folder holds `spec.md`, `plan.md` and `tasks.md`.
 
 If the constitution and any other document disagree, **the constitution wins**.
@@ -34,7 +34,7 @@ CLAUDE.md                 ← Claude Code entry point (imports this file)
 docs/
   constitution.md         ← project rules
   sdd-workflow.md         ← process
-  architecture.md         ← target architecture
+  architecture.md         ← architecture and package layout
 specs/
   _templates/             ← spec / plan / tasks templates
   000-baseline/           ← current behavior of the legacy app (reference)
