@@ -1,6 +1,6 @@
 # Spec 001: Modernize stack
 
-Status: Draft
+Status: Approved
 Created: 2026-10-27
 Branch: `spec/001-modernize-stack`
 Related: [000-baseline](../000-baseline/spec.md), [constitution](../../docs/constitution.md)
@@ -21,10 +21,10 @@ Technology is named here because the migration itself is the requirement.
 
 ### Browsing (US-1)
 
-- **AC-1**: **Given** the app is launched, **when** the sport list finishes loading, **then** a 2-column grid shows one image tile per sport.
+- **AC-1**: **Given** the app is launched, **when** the sport list finishes loading, **then** a 2-column grid shows exactly one image tile per sport: the 8 sports from baseline B-4, ordered by id, with no duplicates.
 - **AC-2**: **Given** the list is loading, **then** a loading indicator is shown instead of the grid.
 - **AC-3**: **Given** the repository fails, **when** the list screen loads, **then** an error message with a "Retry" action is shown, and tapping Retry reloads the list.
-- **AC-4**: Each tile's image comes from a bundled local drawable, so the app works with no network connection.
+- **AC-4**: Each tile's image comes from a bundled local drawable (a placeholder vector icon), so the app works with no network connection.
 
 ### Detail (US-2)
 
@@ -53,12 +53,12 @@ Technology is named here because the migration itself is the requirement.
 - Multi-module split.
 - New features beyond baseline behavior.
 
-## Open questions
+## Decisions (resolved questions)
 
-- [NEEDS CLARIFICATION: Keep the list duplicated three times (24 items), as in baseline B-2, or show each sport once (8 items)? Proposed: once.]
-- [NEEDS CLARIFICATION: Which images to bundle: your own photos, or royalty-free photos you'll supply? Proposed: placeholder Material vector icons per sport until assets are provided.]
-- [NEEDS CLARIFICATION: Keep the app name "MyKotlinCleanExample" and the package `alvaro.exposito.mykotlincleanexample`? Proposed: keep both.]
+- **D-1**: Each sport is shown once (8 items). The tripled list from baseline B-2 is dropped.
+- **D-2**: Images are placeholder vector icons bundled in `res/drawable`. Real images may come in a later spec.
+- **D-3**: The app name `MyKotlinCleanExample` and the package `alvaro.exposito.mykotlincleanexample` stay unchanged.
 
 ## Approval
 
-- [ ] Approved by: ____ on ____
+- [x] Approved by: Alvaro Exposito Guerra on 2026-10-27

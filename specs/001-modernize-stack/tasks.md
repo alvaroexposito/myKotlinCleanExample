@@ -25,8 +25,8 @@ Legend: `[P]` = parallelizable · tests come before implementation.
 
 ## Phase 3: Data (test-first)
 
-- [ ] T020 Add sport drawables to `res/drawable` (placeholders until assets are supplied)
-- [ ] T021 Test `LocalSportDataSourceTest` (AC-4, names per AC-6)
+- [ ] T020 Add 8 placeholder vector icons to `res/drawable`, one per sport (D-2)
+- [ ] T021 Test `LocalSportDataSourceTest`: exactly 8 unique sports (AC-1, D-1), drawables set (AC-4), names per AC-6
 - [ ] T022 [P] Test `SportRepositoryImplTest` (success and failure paths)
 - [ ] T023 Implement `LocalSportDataSource`, `SportRepositoryImpl`, `RepositoryModule`, `SportsApp`
 

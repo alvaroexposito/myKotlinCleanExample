@@ -3,7 +3,7 @@
 Status: Draft
 Spec: [spec.md](spec.md) (must be Approved)
 
-> This is a proposed draft. It becomes actionable only after spec 001 is approved and its open questions are resolved.
+> Spec 001 is approved (decisions D-1 to D-3). This plan needs approval before tasks can start.
 
 ## Approach
 
@@ -32,7 +32,7 @@ Rewrite the app rather than upgrading it in place. The legacy code is about 200 
 | domain | new | `Sport(id: Int, name: String, imageRes: Int)` | `imageRes` is an `@DrawableRes` Int; no Android import needed |
 | domain | new | `SportRepository` | `suspend fun getSports(): Result<List<Sport>>`, `suspend fun getSport(id: Int): Result<Sport?>` |
 | domain | new | `GetSportsUseCase`, `GetSportDetailUseCase` | `operator fun invoke` |
-| data | new | `LocalSportDataSource` | Hard-coded sports table (baseline B-4) |
+| data | new | `LocalSportDataSource` | Hard-coded table of 8 sports, one entry each (baseline B-4, D-1) |
 | data | new | `SportRepositoryImpl` | Wraps the data source in `Result` |
 | di | new | `RepositoryModule` | `@Binds` repository; `@HiltAndroidApp SportsApp` |
 | presentation | new | `SportListViewModel` / `SportListUiState` / `SportListScreen` | `LazyVerticalGrid(GridCells.Fixed(2))` |
@@ -77,7 +77,7 @@ Exact versions are pinned in `gradle/libs.versions.toml` at implementation time 
 
 - **JUnit 5 on Android**: use the `android-junit5` plugin for local unit tests; instrumented tests stay on JUnit 4 runners.
 - **Losing git history in the move**: use `git mv` in its own commit, before any content changes.
-- **Image licensing**: use placeholder vector icons until real assets are approved (spec open question).
+- **Image licensing**: avoided by using placeholder vector icons (D-2).
 
 ## Approval
 
