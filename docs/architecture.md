@@ -2,6 +2,8 @@
 
 Status: Current (implemented by spec 001). For the legacy app this replaced, see `specs/000-baseline/spec.md`.
 
+For diagrams and full technical details (MVVM, Compose, navigation, Hilt, testing), see [`TECHNICAL.md`](TECHNICAL.md).
+
 ## Layers
 
 ```
