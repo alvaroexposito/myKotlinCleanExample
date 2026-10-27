@@ -71,7 +71,7 @@ Tap a tile → `navController.navigate(SportDetail(id))` → `SportDetailViewMod
 | ktlint (Gradle plugin), detekt | Style (Article VI) |
 | Konsist (test) | Enforce layer rule for AC-10 |
 
-Exact versions are pinned in `gradle/libs.versions.toml` at implementation time (latest stable).
+Exact versions are pinned in `gradle/libs.versions.toml`, chosen as a mutually compatible stable set (AGP 8.7.3, Kotlin 2.1.0, Gradle 8.11.1). Upgrading them is a `chore:` change.
 
 ## Risks & mitigations
 

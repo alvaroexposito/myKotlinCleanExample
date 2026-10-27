@@ -1,0 +1,13 @@
+naming:
+  FunctionNaming:
+    ignoreAnnotated: ['Composable']
+  # Test names follow `AC-x description` (constitution Article IV).
+  BackticksFunctionNaming:
+    active: false
+style:
+  MagicNumber:
+    ignorePropertyDeclaration: true
+    excludes: ['**/test/**', '**/androidTest/**', '**/theme/**']
+complexity:
+  LongParameterList:
+    ignoreAnnotated: ['Composable']

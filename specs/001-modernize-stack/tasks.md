@@ -7,14 +7,14 @@ Legend: `[P]` = parallelizable · tests come before implementation.
 
 ## Phase 1: Repository & build setup
 
-- [ ] T001 Create branch `spec/001-modernize-stack`
-- [ ] T002 `git mv MyKotlinCleanExample/* .` to the repo root (own commit, no content changes)
-- [ ] T003 `git rm -r --cached .idea` and replace `.gitignore` with the standard Android template (AC-11)
-- [ ] T004 Replace the Gradle wrapper with the latest stable version; convert to `settings.gradle.kts` / `build.gradle.kts`
-- [ ] T005 Add `gradle/libs.versions.toml` with all plan dependencies
-- [ ] T006 Configure `:app`: AGP 8, Kotlin 2, Compose, KSP, Hilt, `minSdk 24`, `compile/targetSdk 35`, JVM 17
-- [ ] T007 [P] Add ktlint + detekt configuration
-- [ ] T008 Confirm an empty Compose `MainActivity` builds (`./gradlew assembleDebug`)
+- [x] T001 Create branch `spec/001-modernize-stack`
+- [x] T002 `git mv MyKotlinCleanExample/* .` to the repo root (own commit, no content changes)
+- [x] T003 `git rm -r --cached .idea` and replace `.gitignore` with the standard Android template (AC-11)
+- [x] T004 Replace the Gradle wrapper with the latest stable version; convert to `settings.gradle.kts` / `build.gradle.kts`
+- [x] T005 Add `gradle/libs.versions.toml` with all plan dependencies
+- [x] T006 Configure `:app`: AGP 8, Kotlin 2, Compose, KSP, Hilt, `minSdk 24`, `compile/targetSdk 35`, JVM 17
+- [x] T007 [P] Add ktlint + detekt configuration
+- [x] T008 Confirm an empty Compose `MainActivity` builds (`./gradlew assembleDebug`)
 
 ## Phase 2: Domain (test-first)
 
@@ -43,8 +43,8 @@ Legend: `[P]` = parallelizable · tests come before implementation.
 
 ## Phase 5: Cleanup
 
-- [ ] T040 Delete legacy `usercase/`, `view/`, `model/`, `utils/`, XML layouts, Java template tests (AC-12)
-- [ ] T041 Remove the `INTERNET` permission from the manifest
+- [x] T040 Delete legacy `usercase/`, `view/`, `model/`, `utils/`, XML layouts, Java template tests (AC-12) (done during Phase 1: legacy sources can't compile with the new build, so T008 required removing them)
+- [x] T041 Remove the `INTERNET` permission from the manifest (done during Phase 1, when the manifest was rewritten)
 - [ ] T042 Add the Konsist layer test: `domain` has no `android.*` imports (AC-10)
 
 ## Phase 6: Verification
