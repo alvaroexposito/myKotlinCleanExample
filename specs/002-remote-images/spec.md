@@ -1,6 +1,6 @@
 # Spec 002: Remote images from picsum.photos
 
-Status: Approved
+Status: Implemented
 Created: 2026-10-28
 Branch: `spec/002-remote-images`
 Related: [001-modernize-stack](../001-modernize-stack/spec.md) (changes AC-4 and decision D-2), [constitution](../../docs/constitution.md) (Article III)

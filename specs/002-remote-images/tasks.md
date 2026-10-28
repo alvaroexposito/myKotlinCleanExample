@@ -1,6 +1,6 @@
 # Tasks 002: Remote images from picsum.photos
 
-Status: Approved
+Status: Implemented
 Plan: [plan.md](plan.md) (Approved 2026-10-28)
 
 Legend: `[P]` = can run in parallel with the previous task · tests come before implementation.
@@ -47,9 +47,10 @@ Legend: `[P]` = can run in parallel with the previous task · tests come before 
 
 ## Phase 5: Verification
 
-- [ ] T090 All ACs have passing tests; run `./gradlew lint ktlintCheck detekt testDebugUnitTest` and `./gradlew connectedDebugAndroidTest`
-- [ ] T091 Manual check on a device or emulator: photos appear in the grid and on detail, tile and detail show the same photo (AC-3 risk), airplane mode shows the icons and navigation still works, scrolling back up doesn't re-request already-shown photos (network logging, caching requirement)
-- [ ] T092 Update spec/plan/tasks status to `Implemented`
+- [x] T090 All ACs have passing tests; run `./gradlew lint ktlintCheck detekt testDebugUnitTest` and `./gradlew connectedDebugAndroidTest`
+- [x] T091 Manual check on a device or emulator: photos appear in the grid and on detail, tile and detail show the same photo (AC-3 risk), airplane mode shows the icons and navigation still works, scrolling back up doesn't re-request already-shown photos (network logging, caching requirement)
+  - Result (Pixel_8 emulator, API 37, 2026-10-28): photos load in grid and detail; Football tile and detail show the same photo, and picsum redirects each seed to the same image id at both sizes (football → 583, karate → 783); in airplane mode all tiles show their icons. Caching was not measured with network logging: all 8 tiles fit on one screen, so it relies on Coil's default memory cache.
+- [x] T092 Update spec/plan/tasks status to `Implemented`
 
 ## Approval
 

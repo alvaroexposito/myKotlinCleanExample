@@ -1,6 +1,6 @@
 # Plan 002: Remote images from picsum.photos
 
-Status: Approved
+Status: Implemented
 Spec: [spec.md](spec.md) (Approved 2026-10-28)
 
 ## Approach
