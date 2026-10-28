@@ -1,7 +1,10 @@
 package alvaro.exposito.mykotlincleanexample.presentation.sportlist
 
 import alvaro.exposito.mykotlincleanexample.domain.model.Sport
+import alvaro.exposito.mykotlincleanexample.presentation.common.SportImageState
 import alvaro.exposito.mykotlincleanexample.presentation.theme.SportsTheme
+import alvaro.exposito.mykotlincleanexample.testutil.FakeImages
+import alvaro.exposito.mykotlincleanexample.testutil.waitForSportImage
 import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
@@ -89,6 +92,35 @@ class SportListScreenTest {
         setContent(SportListUiState.Success(sports), onSportClick = { clicked = it })
 
         composeRule.onNodeWithContentDescription("Windsurfing").performClick()
+        assertEquals(2, clicked)
+    }
+
+    @Test
+    fun ac1_tileShowsRemotePhotoWhenLoaded() {
+        FakeImages.onlySucceeding(sports.first().tileImageUrl)
+        setContent(SportListUiState.Success(sports))
+
+        composeRule.waitForSportImage("Baseball", SportImageState.Success)
+        composeRule.onNodeWithContentDescription("Baseball").assertIsDisplayed()
+    }
+
+    @Test
+    fun ac4_showsIconWhileLoading() {
+        FakeImages.neverCompleting()
+        setContent(SportListUiState.Success(sports))
+
+        composeRule.waitForSportImage("Baseball", SportImageState.Loading)
+        composeRule.onNodeWithContentDescription("Baseball").assertIsDisplayed()
+    }
+
+    @Test
+    fun ac5_showsIconWhenLoadFails() {
+        var clicked: Int? = null
+        FakeImages.failing()
+        setContent(SportListUiState.Success(sports), onSportClick = { clicked = it })
+
+        composeRule.waitForSportImage("Windsurfing", SportImageState.Error)
+        composeRule.onNodeWithContentDescription("Windsurfing").assertIsDisplayed().performClick()
         assertEquals(2, clicked)
     }
 }

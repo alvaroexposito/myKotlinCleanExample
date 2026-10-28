@@ -40,6 +40,15 @@ class LayerRulesTest {
     }
 
     @Test
+    fun `AC-1 Coil is used only in presentation`() {
+        mainFiles.files
+            .filter { file ->
+                val pkg = file.packagee?.name.orEmpty()
+                pkg.startsWith("$base.domain") || pkg.startsWith("$base.data")
+            }.assertFalse { file -> file.imports.any { it.name.startsWith("coil3.") } }
+    }
+
+    @Test
     fun `AC-10 use cases follow VerbNounUseCase naming`() {
         mainFiles.classes()
             .filter { it.resideInPackage("$base.domain.usecase..") }

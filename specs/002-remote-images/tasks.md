@@ -17,20 +17,20 @@ Legend: `[P]` = can run in parallel with the previous task · tests come before 
 
 ### Data
 
-- [ ] T010 [P] `PicsumImageUrlsTest`: `AC-1 tile URL is https picsum seed URL` (also asserts the `https://` scheme), `AC-3 tile and detail URLs share the same seed`, `AC-3 detail URL is larger than tile URL`
-- [ ] T011 [P] `LocalSportDataSourceTest`: `AC-1 every sport has a picsum tile URL`, `AC-2 image URLs are stable across calls`, `AC-2 each sport has a different seed`; keep `AC-4 every sport has a bundled drawable` from spec 001 (the fallback still needs it)
+- [x] T010 [P] `PicsumImageUrlsTest`: `AC-1 tile URL is https picsum seed URL` (also asserts the `https://` scheme), `AC-3 tile and detail URLs share the same seed`, `AC-3 detail URL is larger than tile URL`
+- [x] T011 [P] `LocalSportDataSourceTest`: `AC-1 every sport has a picsum tile URL`, `AC-2 image URLs are stable across calls`, `AC-2 each sport has a different seed`; keep `AC-4 every sport has a bundled drawable` from spec 001 (the fallback still needs it)
 
 ### Architecture
 
-- [ ] T012 [P] `LayerRulesTest`: add `AC-1 Coil is used only in presentation` (no `coil3.` imports in `domain` or `data`)
+- [x] T012 [P] `LayerRulesTest`: add `AC-1 Coil is used only in presentation` (no `coil3.` imports in `domain` or `data`)
 
 ### Presentation (Compose UI, with Coil `FakeImageLoaderEngine` installed as the singleton loader)
 
-- [ ] T013 Add a small androidTest helper that installs a `FakeImageLoaderEngine` for success, error or never-completing responses, and reads the `SportImageState` semantics property
-- [ ] T014 [P] `SportListScreenTest`: `ac1_tileShowsRemotePhotoWhenLoaded`, `ac4_showsIconWhileLoading`, `ac5_showsIconWhenLoadFails` (state `Error`, name still in semantics, tap still calls `onSportClick`)
-- [ ] T015 [P] `SportDetailScreenTest`: `ac3_detailLoadsDetailUrl`, `ac4_showsIconWhileLoading`, `ac5_showsIconAndNameWhenLoadFails`
-- [ ] T016 [P] `AppNavigationTest`: `ac6_offlineListAndDetailStillWork` (every request fails → 8 tiles, tapping one opens the detail with the name)
-- [ ] T017 Run `./gradlew testDebugUnitTest` and `connectedDebugAndroidTest`; confirm the new tests fail for the expected reasons (empty URLs, no `SportImage` yet)
+- [x] T013 Add a small androidTest helper that installs a `FakeImageLoaderEngine` for success, error or never-completing responses, and reads the `SportImageState` semantics property
+- [x] T014 [P] `SportListScreenTest`: `ac1_tileShowsRemotePhotoWhenLoaded`, `ac4_showsIconWhileLoading`, `ac5_showsIconWhenLoadFails` (state `Error`, name still in semantics, tap still calls `onSportClick`)
+- [x] T015 [P] `SportDetailScreenTest`: `ac3_detailLoadsDetailUrl`, `ac4_showsIconWhileLoading`, `ac5_showsIconAndNameWhenLoadFails`
+- [x] T016 [P] `AppNavigationTest`: `ac6_offlineListAndDetailStillWork` (every request fails → 8 tiles, tapping one opens the detail with the name)
+- [x] T017 Run `./gradlew testDebugUnitTest` and `connectedDebugAndroidTest`; confirm the new tests fail for the expected reasons (empty URLs, no `SportImage` yet)
 
 ## Phase 3: Implementation
 
