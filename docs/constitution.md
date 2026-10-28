@@ -1,6 +1,6 @@
 # Project Constitution
 
-Version: 1.0.0 · Ratified: 2026-10-27
+Version: 1.1.0 · Ratified: 2026-10-27 · Amended: 2026-10-28
 
 These rules govern every spec, plan and line of code. Amending them requires a PR that bumps the version above and explains why.
 
@@ -33,7 +33,7 @@ See `docs/architecture.md` for the package layout.
 | Navigation | Navigation Compose (type-safe routes) |
 | DI | Hilt |
 | Async | Kotlin Coroutines + Flow |
-| Images | Bundled local drawables (no network images) |
+| Images | Remote images over HTTPS loaded with Coil 3; bundled drawables are the placeholder and fallback |
 | Static analysis | Android Lint, ktlint, detekt; all must pass in CI |
 
 Adding a new library requires a line in the relevant `plan.md` saying why.
@@ -66,3 +66,7 @@ Adding a new library requires a line in the relevant `plan.md` saying why.
 1. One branch per spec: `spec/NNN-short-name`.
 2. Conventional Commits that reference the spec: `feat(001): …`, `test(001): …`.
 3. Trivial changes (typos, formatting, comments, dependency patch bumps that change no behavior) are exempt from specs and use `chore:` / `docs:`.
+
+## Amendments
+
+- **1.1.0** (2026-10-28, [spec 002](../specs/002-remote-images/spec.md)): allow remote images over HTTPS so sports can show photos from picsum.photos; the bundled icons stay as placeholder and offline fallback.

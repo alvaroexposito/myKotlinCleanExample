@@ -1,6 +1,6 @@
 # Architecture
 
-Status: Current (implemented by spec 001). For the legacy app this replaced, see `specs/000-baseline/spec.md`.
+Status: Current (implemented by specs 001 and 002). For the legacy app this replaced, see `specs/000-baseline/spec.md`.
 
 For diagrams and full technical details (MVVM, Compose, navigation, Hilt, testing), see [`TECHNICAL.md`](TECHNICAL.md).
 
@@ -36,9 +36,11 @@ alvaro.exposito.mykotlincleanexample
 │   ├── repository/              // SportRepository (interface)
 │   └── usecase/                 // GetSportsUseCase, GetSportDetailUseCase
 ├── data/
+│   ├── image/                   // PicsumImageUrls (photo URLs from a stable seed)
 │   ├── local/                   // LocalSportDataSource (in-memory + drawables)
 │   └── repository/              // SportRepositoryImpl
 └── presentation/
+    ├── common/                  // SportImage (remote photo with icon placeholder/fallback)
     ├── navigation/              // routes, NavGraph
     ├── theme/                   // Material 3 theme
     ├── sportlist/               // SportListScreen, SportListViewModel, SportListUiState
@@ -52,3 +54,4 @@ alvaro.exposito.mykotlincleanexample
 - Repositories return `Result<T>` or `Flow<T>`; they never throw across layer boundaries.
 - Navigation arguments are ids only. Screens load their own data through their ViewModel.
 - Tests mirror the main package structure under `src/test` and `src/androidTest`.
+- Remote images are loaded only in `presentation`, with Coil, through `SportImage`. `data` builds the URLs; `domain` sees them as plain strings (spec 002).

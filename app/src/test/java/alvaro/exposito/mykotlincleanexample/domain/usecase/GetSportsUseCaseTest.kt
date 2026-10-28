@@ -7,7 +7,11 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class GetSportsUseCaseTest {
-    private val sports = listOf(Sport(1, "Baseball", 10), Sport(2, "Windsurfing", 20))
+    private val sports =
+        listOf(
+            Sport(1, "Baseball", 10, "https://example.test/tile/1", "https://example.test/detail/1"),
+            Sport(2, "Windsurfing", 20, "https://example.test/tile/2", "https://example.test/detail/2"),
+        )
 
     @Test
     fun `AC-1 returns the sports from the repository`() =

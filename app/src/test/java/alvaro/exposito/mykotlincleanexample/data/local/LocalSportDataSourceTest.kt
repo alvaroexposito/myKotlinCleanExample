@@ -19,6 +19,28 @@ class LocalSportDataSourceTest {
     }
 
     @Test
+    fun `AC-1 every sport has a picsum tile URL`() {
+        assertTrue(sports.all { it.tileImageUrl.startsWith("https://picsum.photos/seed/") }, sports.toString())
+        assertTrue(sports.all { it.detailImageUrl.startsWith("https://picsum.photos/seed/") }, sports.toString())
+    }
+
+    @Test
+    fun `AC-2 image URLs are stable across calls`() {
+        val again = LocalSportDataSource().getSports()
+
+        assertEquals(
+            sports.map { it.tileImageUrl to it.detailImageUrl },
+            again.map { it.tileImageUrl to it.detailImageUrl },
+        )
+    }
+
+    @Test
+    fun `AC-2 each sport has a different seed`() {
+        assertEquals(sports.size, sports.map { it.tileImageUrl }.toSet().size)
+        assertEquals(sports.size, sports.map { it.detailImageUrl }.toSet().size)
+    }
+
+    @Test
     fun `AC-6 names follow baseline B-4 with Athletics fixed`() {
         assertEquals(
             listOf("Baseball", "Windsurfing", "Cycling", "Motorcycle", "Football", "Swimming", "Karate", "Athletics"),

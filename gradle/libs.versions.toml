@@ -2,7 +2,7 @@
 agp = "9.4.1"
 kotlin = "2.2.10"
 ksp = "2.3.6"
-hilt = "2.53.1"
+hilt = "2.60.1"
 hiltNavigationCompose = "1.2.0"
 coreKtx = "1.15.0"
 activityCompose = "1.9.3"
@@ -21,6 +21,7 @@ androidxTestRunner = "1.7.0"
 espresso = "3.7.0"
 ktlintGradle = "12.1.2"
 detekt = "1.23.7"
+coil = "3.0.4"
 
 [libraries]
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
@@ -51,6 +52,9 @@ turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 konsist = { module = "com.lemonappdev:konsist", version.ref = "konsist" }
 androidx-test-runner = { module = "androidx.test:runner", version.ref = "androidxTestRunner" }
 androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coil" }
+coil-test = { module = "io.coil-kt.coil3:coil-test", version.ref = "coil" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
