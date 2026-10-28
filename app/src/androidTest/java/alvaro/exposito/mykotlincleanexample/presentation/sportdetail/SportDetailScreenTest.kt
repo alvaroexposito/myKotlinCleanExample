@@ -19,7 +19,15 @@ class SportDetailScreenTest {
         composeRule.setContent {
             SportsTheme {
                 SportDetailScreen(
-                    SportDetailUiState.Found(Sport(9, "Athletics", android.R.drawable.ic_menu_gallery)),
+                    SportDetailUiState.Found(
+                        Sport(
+                            9,
+                            "Athletics",
+                            android.R.drawable.ic_menu_gallery,
+                            "https://example.test/tile/9",
+                            "https://example.test/detail/9",
+                        ),
+                    ),
                 )
             }
         }

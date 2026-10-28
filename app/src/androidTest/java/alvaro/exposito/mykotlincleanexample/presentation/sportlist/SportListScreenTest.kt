@@ -21,9 +21,27 @@ class SportListScreenTest {
 
     private val sports =
         listOf(
-            Sport(1, "Baseball", android.R.drawable.ic_menu_gallery),
-            Sport(2, "Windsurfing", android.R.drawable.ic_menu_gallery),
-            Sport(3, "Cycling", android.R.drawable.ic_menu_gallery),
+            Sport(
+                1,
+                "Baseball",
+                android.R.drawable.ic_menu_gallery,
+                "https://example.test/tile/1",
+                "https://example.test/detail/1",
+            ),
+            Sport(
+                2,
+                "Windsurfing",
+                android.R.drawable.ic_menu_gallery,
+                "https://example.test/tile/2",
+                "https://example.test/detail/2",
+            ),
+            Sport(
+                3,
+                "Cycling",
+                android.R.drawable.ic_menu_gallery,
+                "https://example.test/tile/3",
+                "https://example.test/detail/3",
+            ),
         )
 
     private fun setContent(

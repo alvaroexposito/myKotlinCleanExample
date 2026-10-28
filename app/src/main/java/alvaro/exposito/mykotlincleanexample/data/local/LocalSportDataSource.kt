@@ -13,14 +13,14 @@ class LocalSportDataSource
         private companion object {
             val SPORTS =
                 listOf(
-                    Sport(1, "Baseball", R.drawable.ic_sport_baseball),
-                    Sport(2, "Windsurfing", R.drawable.ic_sport_windsurfing),
-                    Sport(3, "Cycling", R.drawable.ic_sport_cycling),
-                    Sport(5, "Motorcycle", R.drawable.ic_sport_motorcycle),
-                    Sport(6, "Football", R.drawable.ic_sport_football),
-                    Sport(7, "Swimming", R.drawable.ic_sport_swimming),
-                    Sport(8, "Karate", R.drawable.ic_sport_karate),
-                    Sport(9, "Athletics", R.drawable.ic_sport_athletics),
+                    Sport(1, "Baseball", R.drawable.ic_sport_baseball, "", ""),
+                    Sport(2, "Windsurfing", R.drawable.ic_sport_windsurfing, "", ""),
+                    Sport(3, "Cycling", R.drawable.ic_sport_cycling, "", ""),
+                    Sport(5, "Motorcycle", R.drawable.ic_sport_motorcycle, "", ""),
+                    Sport(6, "Football", R.drawable.ic_sport_football, "", ""),
+                    Sport(7, "Swimming", R.drawable.ic_sport_swimming, "", ""),
+                    Sport(8, "Karate", R.drawable.ic_sport_karate, "", ""),
+                    Sport(9, "Athletics", R.drawable.ic_sport_athletics, "", ""),
                 )
         }
     }

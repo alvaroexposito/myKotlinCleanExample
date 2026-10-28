@@ -16,7 +16,7 @@ class SportDetailViewModelTest {
     @RegisterExtension
     val mainDispatcher = MainDispatcherExtension()
 
-    private val athletics = Sport(9, "Athletics", 90)
+    private val athletics = Sport(9, "Athletics", 90, "https://example.test/tile/9", "https://example.test/detail/9")
     private val repository = FakeSportRepository(sports = listOf(athletics))
 
     private fun viewModel(id: Int) =
