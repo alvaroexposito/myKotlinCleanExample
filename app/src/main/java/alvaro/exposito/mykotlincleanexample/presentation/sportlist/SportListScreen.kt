@@ -2,7 +2,7 @@ package alvaro.exposito.mykotlincleanexample.presentation.sportlist
 
 import alvaro.exposito.mykotlincleanexample.R
 import alvaro.exposito.mykotlincleanexample.domain.model.Sport
-import androidx.compose.foundation.Image
+import alvaro.exposito.mykotlincleanexample.presentation.common.SportImage
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,9 +23,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -73,10 +71,10 @@ private fun SportGrid(
         modifier = Modifier.fillMaxSize().testTag(SportListTestTags.GRID),
     ) {
         items(sports, key = { it.id }) { sport ->
-            Image(
-                painter = painterResource(sport.imageRes),
+            SportImage(
+                url = sport.tileImageUrl,
+                placeholderRes = sport.imageRes,
                 contentDescription = sport.name,
-                contentScale = ContentScale.Crop,
                 modifier =
                     Modifier
                         .fillMaxWidth()

@@ -34,12 +34,12 @@ Legend: `[P]` = can run in parallel with the previous task · tests come before 
 
 ## Phase 3: Implementation
 
-- [ ] T020 Implement `PicsumImageUrls.tile(seed)` = `https://picsum.photos/seed/<seed>/600/300` and `detail(seed)` = `https://picsum.photos/seed/<seed>/1200/800` (makes T010 pass)
-- [ ] T021 Fill both URLs in `LocalSportDataSource` with the seed `name.lowercase()` (makes T011 pass)
-- [ ] T022 Implement `presentation/common/SportImage`: `AsyncImage` with `placeholder = error = painterResource(imageRes)`, `ContentScale.Crop`, `contentDescription = name`, and the load state in the `SportImageState` semantics property
-- [ ] T023 Use `SportImage(sport.tileImageUrl, …)` in `SportListScreen` (makes T014 pass)
-- [ ] T024 [P] Use `SportImage(sport.detailImageUrl, …)` in `SportDetailScreen` (makes T015 pass)
-- [ ] T025 `AndroidManifest.xml`: add the `INTERNET` permission and `android:usesCleartextTraffic="false"` (makes T016 pass on a real launch)
+- [x] T020 Implement `PicsumImageUrls.tile(seed)` = `https://picsum.photos/seed/<seed>/600/300` and `detail(seed)` = `https://picsum.photos/seed/<seed>/1200/800` (makes T010 pass)
+- [x] T021 Fill both URLs in `LocalSportDataSource` with the seed `name.lowercase()` (makes T011 pass)
+- [x] T022 Implement `presentation/common/SportImage`: `AsyncImage` with `placeholder = error = painterResource(imageRes)`, `ContentScale.Crop`, `contentDescription = name`, and the load state in the `SportImageState` semantics property
+- [x] T023 Use `SportImage(sport.tileImageUrl, …)` in `SportListScreen` (makes T014 pass)
+- [x] T024 [P] Use `SportImage(sport.detailImageUrl, …)` in `SportDetailScreen` (makes T015 pass)
+- [x] T025 `AndroidManifest.xml`: add the `INTERNET` permission and `android:usesCleartextTraffic="false"` (makes T016 pass on a real launch)
 
 ## Phase 4: Docs
 
