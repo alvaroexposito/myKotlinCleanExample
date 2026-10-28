@@ -43,7 +43,7 @@ Legend: `[P]` = can run in parallel with the previous task · tests come before 
 
 ## Phase 4: Docs
 
-- [ ] T030 [P] Update `docs/architecture.md` (data `image/` package, presentation `common/`, image loading line), `docs/TECHNICAL.md` (image loading section) and `AGENTS.md` "Current state" (images now come from picsum.photos with icon fallback)
+- [x] T030 [P] Update `docs/architecture.md` (data `image/` package, presentation `common/`, image loading line), `docs/TECHNICAL.md` (image loading section) and `AGENTS.md` "Current state" (images now come from picsum.photos with icon fallback)
 
 ## Phase 5: Verification
 

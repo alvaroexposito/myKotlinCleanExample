@@ -39,6 +39,7 @@ specs/
   _templates/             ← spec / plan / tasks templates
   000-baseline/           ← current behavior of the legacy app (reference)
   001-modernize-stack/    ← first SDD feature: migrate to the modern stack
+  002-remote-images/      ← sport photos from picsum.photos
 app/                      ← Android app module (domain / data / presentation)
 gradle/libs.versions.toml ← dependency versions
 config/detekt/            ← detekt rules
@@ -47,7 +48,7 @@ config/detekt/            ← detekt rules
 
 ## Current state
 
-Spec 001 is implemented. The app runs on the stack in constitution Article III: Kotlin 2.1, AGP 8.7, Gradle 8.11, Compose + Material 3, Hilt, Coroutines/Flow and Navigation Compose. All data is local, and the images are bundled placeholder icons.
+Specs 001 and 002 are implemented. The app runs on the stack in constitution Article III: Kotlin 2.1, AGP 8.7, Gradle 8.11, Compose + Material 3, Hilt, Coroutines/Flow and Navigation Compose. Sport data is local. Photos come from https://picsum.photos (loaded with Coil), and the bundled icons are the placeholder and offline fallback.
 
 Build with **JDK 17 or 21** (for example `export JAVA_HOME=$(/usr/libexec/java_home -v 21)`). UI tests need a device or emulator; Espresso 3.7+ is required for Android 16+ images.
 
