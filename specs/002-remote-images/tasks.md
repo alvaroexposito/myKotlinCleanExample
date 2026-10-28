@@ -7,6 +7,7 @@ Legend: `[P]` = can run in parallel with the previous task · tests come before 
 
 ## Phase 1: Setup
 
+- [x] T000 Fix the `master` build: bump Hilt 2.53.1 → 2.60.1 (the "Gradle update" commit moved to AGP 9.4.1 + KSP 2.3.6, which Hilt 2.53.1 can't run with). Added during implementation with user approval; separate `fix(build)` commit
 - [x] T001 Create branch `spec/002-remote-images` from `master` and bring over the `specs/002-remote-images/` files
 - [x] T002 Amend `docs/constitution.md` Article III: images row becomes "Remote images over HTTPS loaded with Coil 3; bundled drawables are the placeholder and fallback". Bump version 1.0.0 → 1.1.0 and add a one-line rationale referencing spec 002 (D-4)
 - [ ] T003 Add `coil-compose`, `coil-network-okhttp` (implementation) and `coil-test` (androidTestImplementation), version 3.0.4, to `gradle/libs.versions.toml` and `app/build.gradle.kts`; confirm `./gradlew assembleDebug`
